@@ -1,0 +1,35 @@
+{% extends 'Scolarity/base.html' %}
+{% block left-sidebar %}
+<!-- Left Sidebar  -->
+  <div class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <!-- Sidebar navigation-->
+      <div class="scroll-sidebar">
+      <nav class="sidebar-nav">
+        <ul id="sidebarnav">
+          <li class="nav-devider"></li>
+          <li class="nav-label">Home</li>
+          <li> <a class="" href="{% url 'teacher' %}" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Tableau de Bord Teacher </span></a>
+          </li>
+          <li class="nav-label">Profil</li>
+          <li> <a class="" href="{% url 'profil' %}" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Mon profil</span></a>
+          </li>
+          <li class="nav-label">Modules</li>
+          <li> <a class="" href="{% url 'teacherModule' %}" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Mes Modules</span></a></li>
+          <li class="nav-label">PV</li>
+          <li> <a class="" href="{% url 'teacherPvnote' %}" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Remplir les notes</span></a>
+          <li> <a class="" href="{% url 'teacherStatistic' %}" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu"> Statistic </span></a></li>
+          <li> <a class="" href="{% url 'pvSout' %}" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu"> Mes PV de soutenances </span></a></li>
+
+
+        </ul>
+      </nav>
+      <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+  </div>
+  <!-- End Left Sidebar  -->
+{% endblock left-sidebar %}
+{% block profile %}
+  <img src="{{photo}}" alt="user" class="profile-pic" />
+{% endblock profile %}

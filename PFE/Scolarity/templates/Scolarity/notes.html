@@ -1,0 +1,48 @@
+{% extends 'Scolarity/base-teacher.html' %}
+{% block bread-crumb %}
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-primary">Remplir les PVs</h3>
+  </div>
+  <div class="col-md-7 align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'teacher' %}">Home</a></li>
+      <li class="breadcrumb-item active"><a href="{% url 'teacherPvnote' %}">Remplir les notes</a></li>
+      <li class="breadcrumb-item active">{{matiere}}</li>
+    </ol>
+  </div>
+</div>
+{% endblock bread-crumb %}
+{% block page-content %}
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-titler">Etudiants</h4>
+    <div class="table-responsive m-t-20">
+      <table id="table" class="display nowrap table table-hover table-striped" width="100%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Sexe</th>
+            <th>Groupe</th>
+            <th class="text-left">Section</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for et in etudiants %}
+            <tr>
+              <td>{{et.indexe}}</td>
+              <td><a href="{% url 'note_etudiant' matiere_id=matiere_id etudiant_id=et.id tab=indices %}">{{et.nom}}</a></td>
+              <td><a href="{% url 'note_etudiant' matiere_id=matiere_id etudiant_id=et.id tab=indices %}">{{et.prenom}}</a></td>
+              <td>{{et.sexe}}</td>
+              <td>{{et.groupe}}</td>
+              <td class="text-left">{{et.section}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock page-content %}

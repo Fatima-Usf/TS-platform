@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1"> {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'Scolarity/css/inscription.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'Scolarity/css/bootstrap.css' %}">
+ 
+</head>
+
+<body class="bg-light">
+  <div class="container-fluid p-4">
+    <div class="col-md-8 col-lg-8 mx-auto">
+      {% if registered %}
+
+
+          <div class="container">
+
+            <div class="blobs">
+              <div class="liquid"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+            </div>
+            <h5 class="text">Cher Etudiant,<br>Merci de vous avoir inscrit</h5>
+          </div>
+
+          <div class=""></div>
+
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
+            <defs>
+              <filter id="goog">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+              </filter>
+              <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+              </filter>
+            </defs>
+          </svg>
+          <br>
+      
+          <b> ~~> Veuillez passez à la scolarité pour confirmer votre inscription dans un délai qui ne pas dépasse les 15 jours, sinon votre inscription sera automatiquement rejeter. </b>
+          <br>
+
+      {% else %}
+        <h3 class="mb-3">Formulaire de pré-inscription</h4>
+        <form class="" action="{% url 'inscription' %}" method="post">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="{{form.nom.id_for_label}}">Nom</label>
+              {{form.nom}}
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="{{form.prenom.id_for_label}}">Prénom(s)</label>
+              {{form.prenom}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="{{form.dateNaissance.id_for_label}}">Date de naissance</label>
+              {{form.dateNaissance}}
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="{{form.nationality.id_for_label}}">Nationalité</label>
+              {{form.nationality}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="{{form.sexe.id_for_label}}">Sexe</label>
+              {{form.sexe}}
+            </div>
+          </div>
+
+          <hr class="mb-2">
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="{{form.mail.id_for_label}}">Email</label>
+              {{form.mail}}
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="{{form.tel.id_for_label}}">Téléphone</label>
+              {{form.tel}}
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="{{form.adrs.id_for_label}}">Address</label>
+            {{form.adrs}}
+          </div>
+
+          <h4>Informations de login</h4>
+          <hr class="mb-2">
+
+          <div class="row">
+            <div class="col-md-4">
+              <label for="{{form.username.id_for_label}}">Username</label>
+              {{form.username}}
+              {% if user_taken %}
+                <p class="text-danger" role="alert">Username déjà utilisé</p>
+              {% endif %}
+            </div>
+            <div class="col-md-4">
+              <label for="{{form.password.id_for_label}}">Password</label>
+              {{form.password}}
+            </div>
+            <div class="col-md-4">
+              <label for="{{form.re_password.id_for_label}}">Re-taper le password</label>
+              {{form.re_password}}
+              {% if mdp %}
+                <p class="text-danger" role="alert">Les mots de passes sont différents</p>
+              {% endif %}
+            </div>
+          </div>
+          <hr class="mb-2">
+          <div class="container-fluid text-center">
+            <button class="btn btn-primary w-50" type="submit">Envoyer</button>
+          </div>
+        </form>
+      {% endif %}
+	  </div>
+	</div>
+
+	<script type="text/javascript" src="{% static 'Scolarity/js/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'Scolarity/js/bootstrap.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+.left-sidebar, .scroll-sidebar, .sidebar-nav{background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url('../img/sidebar-5.jpg');
+  background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;}

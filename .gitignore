@@ -1,0 +1,7 @@
+PFE/PFE/__pycache__/
+PFE/Scolarity/__pycache__/
+.idea/
+PFE/db.sqlite3
+PFE/Scolarity/migrations/
+PFE/PFE/.settings.py.swp
+venv/

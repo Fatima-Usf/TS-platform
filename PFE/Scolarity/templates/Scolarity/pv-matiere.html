@@ -1,0 +1,65 @@
+{% extends 'Scolarity/base-etudiant.html' %}
+{% block bread-crumb %}
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-primary">PV Matiere</h3>
+  </div>
+  <div class="col-md-7 align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Home</a></li>
+      <li class="breadcrumb-item active">PV Matiere</li>
+    </ol>
+  </div>
+</div>
+{% endblock bread-crumb %}
+{% block page-content %}
+{% for semestre in listSemestre %}
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-titler">{{semestre.libele}}</h4>
+    <div class="table-responsive m-t-20">
+      <table id="table" class="display nowrap table table-hover table-striped" width="100%">
+        <thead>
+          <tr>
+            <th>Matière</th>
+            <th>CC Cours</th>
+            <th>CC TD</th>
+            <th>CC TP</th>
+            <th>Moy CC</th>
+            <th>EF</th>
+            <th class="text-left">Moyenne</th>
+          </tr>
+        </thead>
+        <!--tfoot>
+          <tr>
+            <th>Matière</th>
+            <th>CC Cours</th>
+            <th>CC TD</th>
+            <th>CC TP</th>
+            <th>Moy CC</th>
+            <th>EF</th>
+            <th >Moyenne</th>
+          </tr>
+        </tfoot-->
+        <tbody>
+          #pour chaque objet dans le tableau
+          {% for obj in tab %}
+            {% if obj.semestre == semestre.code %}
+          <tr>
+            <td>{{obj.matiere}}</td>
+            <td>{{obj.note_cours}}</td>
+            <td>{{obj.note_td}}</td>
+            <td>{{obj.note_tp}}</td>
+            <td>{{obj.moyenneCC|floatformat:2}}</td>
+            <td>{{obj.note_examen}}</td>
+            <td class="text-left">{{obj.moyenne|floatformat:2}}</td>
+          </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock page-content %}
