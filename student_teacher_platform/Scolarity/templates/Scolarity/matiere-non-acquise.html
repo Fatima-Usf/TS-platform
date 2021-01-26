@@ -1,0 +1,58 @@
+{% extends 'Scolarity/base-etudiant.html' %}
+{% block bread-crumb %}
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-primary">Matieres non acquises</h3>
+  </div>
+  <div class="col-md-7 align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Home</a></li>
+      <li class="breadcrumb-item active">Matieres non acquises</li>
+    </ol>
+  </div>
+</div>
+{% endblock bread-crumb %}
+{% block page-content %}
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-titler">Matières non acquises</h4>
+    <div class="table-responsive m-t-20">
+      <table id="table" class="display nowrap table table-hover table-striped" width="100%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Intitulé</th>
+            <th>Unité</th>
+            <th>Semestre</th>
+            <th>Moyenne CC</th>
+            <th>EF</th>
+            <th class="text-left">Moyenne</th>
+          </tr>
+        </thead>
+        <!--tfoot>
+          <tr>
+            <th>#</th>
+            <th>Intitulé</th>
+            <th>Unité</th>
+            <th>Semestre</th>
+            <th>Moyenne</th>
+          </tr>
+        </tfoot-->
+        <tbody>
+          {% for mat in matieres %}
+            <tr>
+              <td></td>
+              <td>{{ mat.libele }}</td>
+              <td>{{ mat.unite }}</td>
+              <td>{{ mat.semestre }}</td>
+              <td>{{mat.cc}}</td>
+              <td>{{mat.ef}}</td>
+              <td class="text-left">{{ mat.moyenne }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock page-content %}

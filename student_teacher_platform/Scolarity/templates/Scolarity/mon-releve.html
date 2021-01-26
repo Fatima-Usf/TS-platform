@@ -1,0 +1,88 @@
+{% extends 'Scolarity/base-etudiant.html' %}
+{% block bread-crumb %}
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-primary">Mon Relevé</h3>
+  </div>
+  <div class="col-md-7 align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Home</a></li>
+      <li class="breadcrumb-item active">Mon Relevé</li>
+    </ol>
+  </div>
+</div>
+{% endblock bread-crumb %}
+{% block page-content %}
+  {% for obj in list_semestre %}
+  <div class="card">
+  <div class="card-body">
+    <h4 class="card-titler">{{obj.semestre.libele}}</h4>
+    <div class="table-responsive m-t-20">
+      <table id="table" class="display table table-bordered " width="100%">
+        <thead>
+          <th colspan="4" class="text-center">Unités d'Enseignement</th>
+          <th colspan="3" class="text-center">Matière(s) constituitive(s) de l'UE</th>
+          <th colspan="6" class="text-center">Résultats obtenus</th>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td rowspan="2">Nature</td>
+            <td rowspan="2">Code et intitulé</td>
+            <td rowspan="2">Crédit réquis</td>
+            <td rowspan="2">Coef</td>
+            <td rowspan="2">Intitulé(s)</td>
+            <td rowspan="2">Crédit réquis</td>
+            <td rowspan="2">Coef</td>
+            <td colspan="3">Matière(s)</td>
+            <td colspan="3" class="text-center">UE</td>
+          </tr>
+          <tr>
+            <td>Note</td>
+            <td>Credits</td>
+            <td>Sess/An</td>
+            <td>Note</td>
+            <td>Credits</td>
+            <td class="text-center">Sess/An</td>
+          </tr>
+          {% for unite in obj.unites %}
+            <tr>
+              <td rowspan="{{unite.nb_matieres}}">{{unite.unite.nature}}</td>
+              <td rowspan="{{unite.nb_matieres}}">{{unite.unite.code}}    {{unite.unite.libele}}</td>
+              <td rowspan="{{unite.nb_matieres}}">{{unite.unite.credit_requis}}</td>
+              <td rowspan="{{unite.nb_matieres}}">{{unite.unite.coef}}</td>
+              <td>{{unite.first.matiere.libele}}</td>
+              <td>{{unite.first.matiere.credit}}</td>
+              <td>{{unite.first.matiere.coef}}</td>
+              <td>{{unite.first.note|floatformat:2}}</td>
+              <td>{{unite.first.credit}}</td>
+              <td>None</td>
+              <td rowspan="{{unite.nb_matieres}}">{{unite.note|floatformat:2}}</td>
+              <td rowspan="{{unite.nb_matieres}}">{{unite.credit}}</td>
+              <td rowspan="{{unite.nb_matieres}}" class="text-center">None</td>
+            </tr>
+
+            {% if unite.nb_matieres > 1 %}
+              {% for mat in unite.matieres %}
+                <tr>
+                  <td>{{mat.matiere.libele}}</td>
+                  <td>{{mat.matiere.credit}}</td>
+                  <td>{{mat.matiere.coef}}</td>
+                  <td>{{mat.note|floatformat:2}}</td>
+                  <td>{{mat.credit}}</td>
+                  <td class="text-center">None</td>
+                </tr>
+              {% endfor %}
+            {% endif %}
+
+          {% endfor %}
+        </tbody>
+      </table>
+      <p class="m-t-20">Moyenne: {{obj.note|floatformat:2}}</p>
+      <p>Crédits obtenus: {{obj.credit}}</p>
+      <a href="{% url 'releve_pdf' id=etudiant_id %}">Imprimer</a>
+
+    </div>
+  </div>
+</div>
+  {% endfor %}
+{% endblock page-content %}

@@ -1,0 +1,18 @@
+{% extends 'Scolarity/base-etudiant.html' %}
+{% block bread-crumb %}
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-primary">Tableau de bord</h3>
+  </div>
+  <div class="col-md-7 align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Home</a></li>
+      <li class="breadcrumb-item active">Tableau de bord</li>
+    </ol>
+  </div>
+</div>
+{% endblock bread-crumb %}
+{% block page-content %}
+<p id="bienvenu"> Bonjour {{etudiant.nom}} {{etudiant.prenom}}</p>
+<p id="bienvenu">Bienvenu au service scolarité </p>
+{% endblock page-content %}

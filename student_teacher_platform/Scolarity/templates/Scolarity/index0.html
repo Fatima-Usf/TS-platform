@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Département informatique</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+   {% load static %}
+  <!-- Favicons -->
+  <link href="{% static 'Scolarity/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'Scolarity/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'Scolarity/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'Scolarity/lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'Scolarity/lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'Scolarity/lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'Scolarity/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'Scolarity/lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'Scolarity/css/style1.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <!--<h1><a href="#intro" class="scrollto">Univ Oran1 </a></h1>-->
+       <a href="#intro"><img class="univLogo" src="{% static 'Scolarity/img/apple-touch-icon.png' %}" alt="" title="" /></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li><a href="#about">Services</a></li>
+          <li><a href="#services">About us</a></li>
+      <!--   <li><a href="#portfolio">Portfolio</a></li>-->
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="{% static 'Scolarity/img/intro-carousel/2.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Département d'informatique</h2>
+                <p>Bienvenu au département d'informatique de l'université d'Oran1 Ahmed Benbella</p>
+                <a href="#about" class="btn-get-started scrollto "> <i class="fa fa-chevron-down"></i> </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{% static 'Scolarity/img/intro-carousel/0.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Univ 1 Oran Ahmed Benbella</h2>
+                <p> L’université d’Oran est pluridisciplinaire, elle assure la formation et la recherche dans de
+                nombreux domaines</p>
+              <a href="#about" class="btn-get-started scrollto "> <i class="fa fa-chevron-down"></i> </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{% static 'Scolarity/img/intro-carousel/6.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Univ 1 Oran Ahmed Benbella</h2>
+                <p> L’université d’Oran est pluridisciplinaire, elle assure la formation et la recherche dans de
+                nombreux domaines</p>
+                <a href="#about" class="btn-get-started scrollto "> <i class="fa fa-chevron-down"></i> </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{% static 'Scolarity/img/intro-carousel/9.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Nos amphis</h2>
+                <p> Sa diversité thématique concerne aussi bien la formation de graduation que de post-graduation et constitue une véritable richesse scientifique qui attire de plus en plus d’étudiants.</p>
+                <a href="#about" class="btn-get-started scrollto "> <i class="fa fa-chevron-down"></i> </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{% static 'Scolarity/img/intro-carousel/7.jpg' %}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2></h2>
+                <p>L'entré de l'université</p>
+                <a href="#about" class="btn-get-started scrollto "> <i class="fa fa-chevron-down"></i> </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- #intro -->
+
+  <main id="main">
+
+
+    <!--==========================
+      Service Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Nos Services</h3>
+          <p> <strong> Le département d'informatique dispose plusieurs services, chacun a pour bute d'organisé le fonctionement interne du département, et tout les services intéragissent entre eux .</p>
+        </header>
+
+        <div class="row about-cols">
+
+          <div class="col-md-6 wow fadeInUp">
+            <div class="about-col">
+              <div class="img">
+                <img src="{% static 'Scolarity/img/about-mission.jpg' %}" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Service Secrétariat</a></h2>
+              <p>
+                 responsable des justificatifs d'absences, des recours graduation (notes, affectation groupe, …), recours post graduation (dossiers déposés pour
+                le CSD) et de la gestion des entrées/sorties de tout les autres services.
+              </p>
+            </div>
+          </div>
+
+            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="about-col">
+                <div class="img">
+                  <img src="{% static 'Scolarity/img/about-vision.jpg' %}" alt="" class="img-fluid">
+                  <div class="icon"><i class="ion-ios-list-outline"></i></div>
+                </div>
+                <h2 class="title"><a href="#">Service Pédagogie</a></h2>
+                <p>
+                  Responsable des affectations des sujets L/M, des suivies des examens (planning des examens et affectations des surveillants),
+                  du planning et suivis des CPC Traitement, des absences Traitement et des recours.</p>
+              </div>
+            </div>
+
+          <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="about-col">
+              <div class="img">
+                <img src="{% static 'Scolarity/img/about-plan.jpg' %}" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="{% url 'index' %}">Service Scolarité</a></h2>
+              <p>
+                 Rsesponsable de la génération des listes des étudiants, leur mise à jour, la création des groupes, le saisie et l'édition des PV finaux de délibérations, l'edition des relevés de notes et des diplômes
+               </p>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="about-col">
+              <div class="img">
+                <img src="{% static 'Scolarity/img/about-vision.jpg' %}" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Service Post-Graduation</a></h2>
+              <p>
+              Responsable des Inscription/Réinscription des doctorants, autorisation soutenance Dossier CSD (polycopié, passage grade, ...), traitement des recours. </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      About Section
+    ============================-->
+    <section id="services">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Qui sommes nous</h3>
+      <p id="k"> L’université d'Oran Es-Sénia (en arabe: جامعة وهران السانية) est une université algérienne située dans la wilaya d'Oran.
+     <br> Elle a été fondée en novembre 1961 et rattachée à l'université d'Alger le 13 avril 1965. L'université d'Oran est l'une
+      des plus importantes et des plus grandes universités d'Algérie, qui diplôme chaque année des milliers d'étudiants dans
+      toutes les disciplines. L’université d’Oran est pluridisciplinaire, elle assure la formation et la recherche dans de
+      nombreux domaines : sciences, techniques, santé, sciences sociales et humaines, économie, gestion, droit, lettres,
+      langues et arts. Cette diversité thématique concerne aussi bien la formation de graduation que de post-graduation et
+      constitue une véritable richesse scientifique qui attire de plus en plus d’étudiants. Pour faire face à cette demande
+      et répondre aux attentes qu’elle suscite, l’Université d’Oran s’appuie sur l’expérience de ses enseignants et l’engagement
+      de son personnel de soutien.</p>
+        </header>
+
+
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+      Call To Action Section
+    ============================-->
+    <section id="call-to-action" class="wow fadeIn">
+      <div class="container text-center">
+        <h3> ______________________________</h3>
+        <h3> <strong> Pour plus d'information contactez nous </h3>
+        <h3>______________________________</h3>
+        <p>  <strong></p>
+        <a class="cta-btn" href="#contact"><i class="fa fa-chevron-down"></i></a>
+      </div>
+    </section>
+
+
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+      <div class="container">
+
+        <div class="section-header">
+          <h3>Contactez nous</h3>
+          <p>N'hésitez pas à nous contactez pour plus d'information concernant le département informatique</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>Univ Oran1 Esenia</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Numéro de tel</h3>
+              <p><a href="tel:+213000000">+213 000000</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@univ1.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Envoyer le message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>Univ1</h3>
+            <p> L’université d'Oran Es-Sénia (en arabe: جامعة وهران السانية) est une université algérienne située dans la wilaya d'Oran.
+            c'est l'une des plus importantes et des plus grandes universités d'Algérie.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Liens utiles</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contactez nous</h4>
+            <p>
+              en face du tarm <br>
+              oran Senia univ1<br>
+              ex igmo <br>
+              <strong>Phone:</strong> +213 00000000<br>
+              <strong>Email:</strong> info@univ1.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Inofmation précise</h4>
+            <p>Vous cherchez une information précise et vous ne la trouvez pas dans la page d'aucceill? tapez votre recherche.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Chercher">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'Scolarity/lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/waypoints/waypoints.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/isotope/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/lightbox/js/lightbox.min.js' %}"></script>
+  <script src="{% static 'Scolarity/lib/touchSwipe/jquery.touchSwipe.min.js' %}"></script>
+
+
+
+  <script src="{% static 'Scolarity/js/main.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'Scolarity/base.html' %}
+
+{% block left-sidebar %}
+
+
+<!-- Left Sidebar  -->
+  <div class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+      <!-- Sidebar navigation-->
+      <nav class="sidebar-nav" >
+        <ul id="sidebarnav">
+          <li class="nav-devider"></li>
+          <li class="nav-label">Home</li>
+          <li> <a class="" href="{% url 't-bord' %}" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Tableau de Bord </span></a>
+          </li>
+          <li class="nav-label">Groupe</li>
+          <li> <a class="" href="{% url 'mon-groupe' %}" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Mon Groupe</span></a>
+          </li>
+          <li class="nav-label">Matières</li>
+          <li> <a class="" href="{% url 'matiere-non-acquise' %}" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Matières Non Acquises </span></a></li>
+          <li class="nav-label">PV</li>
+          <li> <a class="" href="{% url 'pv-matiere' %}" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">PV Marière</span></a>
+          <li class="nav-label">Relevé</li>
+          <li> <a class="" href="{% url 'mon-releve' %}" aria-expanded="false"><i class="fa fa-newspaper-o"></i><span class="hide-menu">Mon Rélévé</span></a></li>
+        </ul>
+      </nav>
+      <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+  </div>
+  <!-- End Left Sidebar  -->
+{% endblock left-sidebar %}
+{% block profile %}
+  <img alt="user" class="profile-pic" />
+{% endblock profile %}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Favicon icon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="">
+  <title>Scolarité</title>
+
+  {% load static %}
+  <!-- Bootstrap Core CSS -->
+  <link href="{% static 'Scolarity/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="{% static 'Scolarity/css/lib/calendar2/semantic.ui.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'Scolarity/css/lib/calendar2/pignose.calendar.min.css' %}" rel="stylesheet">
+  <link href="{% static 'Scolarity/css/lib/owl.carousel.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'Scolarity/css/lib/owl.theme.default.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'Scolarity/css/helper.css' %}" rel="stylesheet">
+  <link href="{% static 'Scolarity/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'Scolarity/css/student.css' %}" />
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+  <!--[if lt IE 9]>
+    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  <style media="screen">
+    {% block style %}{% endblock style %}
+  </style>
+</head>
+
+<body class="fix-header fix-sidebar">
+  <!-- Main wrapper  -->
+  <div id="main-wrapper">
+    <!-- header header  -->
+    <div class="header">
+      <nav class="navbar top-navbar navbar-expand-md navbar-light">
+        <!-- Logo -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            <!-- Logo icon -->
+            <b><img src="{% static 'Scolarity/img/logo.png' %}" alt="homepage" class="" /></b>
+            <!--End Logo icon -->
+            <!-- Logo text -->
+            <span><img src="{% static 'Scolarity/img/logo-text.png' %}" alt="homepage" class="" /></span>
+          </a>
+        </div>
+        <!-- End Logo -->
+        <div class="navbar-collapse">
+          <!-- toggle and nav items -->
+          <ul class="navbar-nav mr-auto mt-md-0">
+            <!-- This is  -->
+            <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+            <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+          </ul>
+          <!-- User profile and search -->
+          <ul class="navbar-nav my-lg-0">
+
+            <!-- Comment -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
+								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+							</a>
+              <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                <ul>
+                  <li>
+                    <div class="drop-title">Notifications</div>
+                  </li>
+                  <li>
+                    <div class="message-center">
+                      <!-- Message -->
+                      <a href="#">
+                        <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
+                        <div class="mail-contnet">
+                          <h5>Titre</h5> <span class="mail-desc">Message!</span> <span class="time">Time</span>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="nav-link text-center" href=""> <strong>Voir toutes les notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- End Comment -->
+
+            <!-- Profile -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{% static 'Scolarity/img/user.jpg' %}" alt="User"></a>
+              <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                <ul class="dropdown-user">
+                  <li><a href="{% url 'my_logout' %}"><i class="fa fa-power-off"></i> Logout</a></li>
+                </ul>
+              </div>
+            </li>
+            <!-- End Profile -->
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- End header header -->
+    <!-- Left Sidebar  -->
+    {% block left-sidebar %}{% endblock left-sidebar %}
+    <!-- End Left Sidebar  -->
+    <!-- Page wrapper  -->
+    <div class="page-wrapper" id="tswira">
+      <!-- Bread crumb -->
+      {% block bread-crumb %}{% endblock bread-crumb %}
+      <!-- End Bread crumb -->
+      <!-- Container fluid  -->
+      <div class="container-fluid">
+        <!-- Start Page Content -->
+        {% block page-content %}{% endblock page-content %}
+        <!-- End PAge Content -->
+      </div>
+      <!-- End Container fluid  -->
+      <!-- footer -->
+      <!--<footer class="footer"> © 2018 All rights reserved.</footer>-->
+      <!-- End footer -->
+    </div>
+    <!-- End Page wrapper  -->
+  </div>
+  <!-- End Wrapper -->
+
+  <!-- All Jquery -->
+  <script src="{% static 'Scolarity/js/jquery-3.3.1.min.js' %}"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{% static 'Scolarity/js/bootstrap.js' %}"></script>
+  <!--Custom JavaScript -->
+  <script src="{% static 'Scolarity/js/custom.min.js' %}"></script>
+  <script>{% block js %}{% endblock js %}</script>
+</body>
+
+</html>

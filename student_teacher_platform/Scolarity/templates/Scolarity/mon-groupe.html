@@ -1,0 +1,58 @@
+{% extends 'Scolarity/base-etudiant.html' %}
+{% block bread-crumb %}
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-primary">Mon Groupe</h3>
+  </div>
+  <div class="col-md-7 align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Home</a></li>
+      <li class="breadcrumb-item active">Mon Groupe</li>
+    </ol>
+  </div>
+</div>
+{% endblock bread-crumb %}
+{% block page-content %}
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-titler">Liste des étudiants</h4>
+        <div class="table-responsive m-t-20">
+            <table id="table" class="display nowrap table table-hover table-striped" width="100%">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Sexe</th>
+                        <th class="text-left">Date de naissance</th>
+                    </tr>
+                </thead>
+                <!--tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Sexe</th>
+                        <th>Date de naissance</th>
+                    </tr>
+                </tfoot-->
+                <tbody>
+                  {% for etudiant in etudiants %}
+                    <tr>
+                      <td>{{etudiant.id}}</td>
+                      <td>{{etudiant.nom}}</td>
+                      <td>{{etudiant.prenom}}</td>
+                      {% if etudiant.sexe == '1' %}
+                        <td>Homme</td>
+                      {% else %}
+                        <td>Femme</td>
+                      {% endif %}
+                      <td class="text-left">{{etudiant.dateNaissance}}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock page-content %}

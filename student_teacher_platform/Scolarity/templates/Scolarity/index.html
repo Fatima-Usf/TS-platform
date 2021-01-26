@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Service Scolarité</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'Scolarity/css/index.css' %}" />
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <h1> ~ Bienvenu au service scolarité ~ </h1>
+    </header>
+    <h4> </h4>
+    <section>
+      <div class="content">
+        <div class="title">Login</div>
+        <div class="sousContent">
+          <form class="" action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Nom d'utilisateur">
+            <label for="rememberMe"></label>
+            <input type="password" name="password" placeholder="Mot de passe">
+            </div>
+            {% if error %}
+             <div class="alert alert-danger" role="alert">
+               <p>Nom d'utilisateur ou mot de passe incorrecte ou compte inactive</p>
+             </div>
+            {% endif %}
+            <hr>
+            <button type="submit">Login</button>
+            </form>
+            <br>
+            <p> Vous n'avez pas encore de compte? <a href={% url 'inscription' %}>S'inscrire</a></p>
+            <p>
+              se connecer autant qu'<a href="/admin/">administrateur</a>
+            </p>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

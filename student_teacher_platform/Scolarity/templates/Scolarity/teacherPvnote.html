@@ -1,0 +1,45 @@
+{% extends 'Scolarity/base-teacher.html' %}
+{% block bread-crumb %}
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-primary">Remplir les PVs</h3>
+  </div>
+  <div class="col-md-7 align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'teacher' %}">Home</a></li>
+      <li class="breadcrumb-item active">Remplir les notes</li>
+    </ol>
+  </div>
+</div>
+{% endblock bread-crumb %}
+{% block page-content %}
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-titler">Modules</h4>
+    <div class="table-responsive m-t-20">
+      <table id="table" class="display nowrap table table-bordered table-hover table-striped" width="100%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Intitulé</th>
+            <th>Unité</th>
+            <th>Semestre</th>
+            <th class="text-left">Niveau</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for m in matieres %}
+            <tr>
+              <td>{{m.index}}</td>
+              <td><a href="{% url 'note' matiere_id=m.id %}">{{m.intitule}}</a></td>
+              <td>{{m.unite}}</td>
+              <td>{{m.semestre}}</td>
+              <td class="text-left">L{{m.niveau}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock page-content %}
